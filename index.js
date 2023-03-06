@@ -8,7 +8,7 @@ http
       response.writeHead(200, {
         "Content-Type": "text/plain; charset=utf-8",
       });
-      response.write(String(request));
+      response.write("Hello World!");
       response.end();
     })
     .listen("2023");
