@@ -1,6 +1,8 @@
 const mysql = require('mysql');
 const http = require('http');
 
+console.log("Hello World!");
+
 http
     .createServer((request, response) => {
       response.writeHead(200, {
