@@ -12,3 +12,7 @@ http
       response.end();
     })
     .listen("2023");
+
+console.log("The Server is running at Port 2023");
+
+// https://www.w3schools.com/nodejs/nodejs_mysql.asp
