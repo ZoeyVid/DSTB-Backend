@@ -7,26 +7,18 @@ const app = express()
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
-  console.log(req);
-  console.log(res);
 })
 
 app.post('/user', function (req, res) {
   res.send('Got a POST request');
-  console.log(req);
-  console.log(res);
 });
 
 app.put('/user', function (req, res) {
   res.send('Got a PUT request at /user');
-  console.log(req);
-  console.log(res);
 });
 
 app.delete('/user', function (req, res) {
   res.send('Got a DELETE request at /user');
-  console.log(req);
-  console.log(res);
 });
 
 app.listen("2023", () => {
