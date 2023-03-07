@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen("2023", () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app listening on port 2023!`)
 })
 
 
