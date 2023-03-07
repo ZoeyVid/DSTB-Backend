@@ -1,19 +1,17 @@
 const mysql = require('mysql');
 const express = require('express');
-const http = require('http');
 
 console.log("Hello World!");
 
-http
-    .createServer((request, response) => {
-      response.writeHead(200, {
-        "Content-Type": "text/plain; charset=utf-8",
-      });
-      response.write("Hello World!");
-      response.end();
-    })
-    .listen("2023");
+const app = express()
 
-console.log("The Server is running at Port 2023");
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen("2023", () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
 
 // https://www.w3schools.com/nodejs/nodejs_mysql.asp
