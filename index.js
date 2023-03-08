@@ -9,15 +9,19 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.post('/user', function (req, res) {
+app.get('/user', function (req, res) {
+  res.send('Got a GET request at /user');
+});
+
+app.post('/user/create', function (req, res) {
   res.send('Got a POST request');
 });
 
-app.put('/user', function (req, res) {
+app.put('/user/update', function (req, res) {
   res.send('Got a PUT request at /user');
 });
 
-app.delete('/user', function (req, res) {
+app.delete('/user/delete', function (req, res) {
   res.send('Got a DELETE request at /user');
 });
 
