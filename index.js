@@ -14,6 +14,10 @@ for (const file of apiFiles) {
   require(`./api/${file}`)(app);
 }
 
+app.post('/user/create', function (req, res) {
+    res.send('Got a POST request');
+  });
+
 app.listen("2023", () => {
   console.log(`Example app listening on port 2023!`)
 })
