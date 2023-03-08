@@ -1,13 +1,18 @@
 const mysql = require('mysql');
 const express = require('express');
+const fs = require('node:fs');
 
 console.log("Hello World!");
 
 const app = express()
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const apiFiles = fs
+.readdirSync("./api")
+.filter((file) => file.endsWith(".js"));
+
+for (const file of apiFiles) {
+  require(`./api/${file}`)(app);
+}
 
 app.get('/user', function (req, res) {
   res.send('Got a GET request at /user');
