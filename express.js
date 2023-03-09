@@ -1,7 +1,8 @@
 const express = require('express')
-const { userCreate } = require('./user/userCreate')
+const { userCreate } = require('./user')
 
 module.exports = function() {
+    console.log("Express module loaded!")
     const app = express()
     app.get('/', function(req, res) {
         res.send('Hello World!')
