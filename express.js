@@ -1,5 +1,7 @@
 const express = require('express')
 
+import { userCreate } from './user/userCreate.js'
+
 module.exports = function() {
     const app = express()
     app.get('/', function(req, res) {
@@ -10,6 +12,7 @@ module.exports = function() {
     })
     app.post('/user/create', function(req, res) {
         res.send('Got a POST request')
+        userCreate()
     })
     app.put('/user/update', function(req, res) {
         res.send('Got a PUT request at /user')
