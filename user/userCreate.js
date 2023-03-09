@@ -1,5 +1,3 @@
-function userCreate() {
+module.exports = function userCreate() {
     console.log("userCreate")
 }
-
-export { userCreate }
