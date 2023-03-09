@@ -1,6 +1,5 @@
 const express = require('express')
-
-import { userCreate } from './user/userCreate.js'
+const { userCreate } = require('./user/userCreate')
 
 module.exports = function() {
     const app = express()
