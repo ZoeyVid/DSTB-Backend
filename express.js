@@ -1,7 +1,7 @@
 const express = require('express')
 const { userCreate } = require('./user')
 
-module.exports = function() {
+module.exports = async function() {
     console.log("Express module loaded!")
     const app = express()
     app.get('/', function(req, res) {
@@ -10,9 +10,9 @@ module.exports = function() {
     app.get('/user', function(req, res) {
         res.send('Got a GET request at /user')
     })
-    app.post('/user/create', function(req, res) {
-        res.send('Got a POST request')
-        userCreate()
+    app.post('/user/create', async function(req, res) {
+        var response = await userCreate()
+        res.send(response)
     })
     app.put('/user/update', function(req, res) {
         res.send('Got a PUT request at /user')

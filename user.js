@@ -1,5 +1,5 @@
 module.exports = {
     userCreate: function() {
-        console.log('userCreate')
+        return "Got a POST request"
     }
 }
