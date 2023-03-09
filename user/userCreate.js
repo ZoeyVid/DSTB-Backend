@@ -1,3 +1,5 @@
-module.exports = function userCreate() {
-    console.log("userCreate")
+module.exports = {
+    userCreate: function() {
+        console.log('userCreate')
+    }
 }
