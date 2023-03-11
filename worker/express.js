@@ -1,5 +1,5 @@
 const express = require('express')
-const { userCreate } = require('./user')
+const { userCreate } = require('./worker/user')
 
 module.exports = async function() {
     console.log("Express module loaded!")
