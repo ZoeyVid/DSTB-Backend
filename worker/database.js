@@ -5,6 +5,7 @@ let connection
 module.exports = {
     connect: function() {
         connection = mysql.createConnection({
+            port: config.port,
             host: config.host,
             user: config.user,
             password: config.password,
