@@ -4,4 +4,5 @@ console.log("Load express module...");
 require("./express.js")();
 
 console.log("Load database module...");
-require("./database.js")();
+const { connect } = require("./database.js")();
+connect();
