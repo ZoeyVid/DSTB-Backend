@@ -1,5 +1,7 @@
+function userCreate() {
+    return "Got a POST request"
+}
+
 module.exports = {
-    userCreate: function() {
-        return "Got a POST request"
-    }
+    userCreate
 }
