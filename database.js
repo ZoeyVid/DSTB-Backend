@@ -20,11 +20,11 @@ module.exports = {
             }
             console.log("Database connected!");
         });
-        connection.query("SELECT count(*) FROM information_schema.TABLES", function (err, result, fields) {
+        connection.query("SELECT * FROM information_schema.TABLES", function (err, result, fields) {
             if (err) throw err;
             console.log(result);
         });
-        console.log(await query("SELECT * FROM information_schema.TABLES"))
+        //console.log(await query("SELECT * FROM information_schema.TABLES"))
     },
     query: async function(query) {
         await connection.query(query, function (err, result, fields) {
