@@ -24,10 +24,10 @@ module.exports = {
             if (err) throw err;
             console.log(result);
         });
-        console.log(query("SELECT * FROM information_schema.TABLES"))
+        console.log(await query("SELECT * FROM information_schema.TABLES"))
     },
     query: async function(query) {
-        connection.query(query, function (err, result, fields) {
+        await connection.query(query, function (err, result, fields) {
             if (err) throw err;
             return result;
         });
