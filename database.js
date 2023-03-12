@@ -4,6 +4,7 @@ let connection
 
 module.exports = {
     connect: function() {
+        console.log("Database module loaded!")
         connection = mysql.createConnection({
             host: config.host,
             port: config.port,
@@ -13,10 +14,11 @@ module.exports = {
         });
         connection.connect(function(err) {
             if (err) {
-                console.error('error connecting: ' + err.stack);
-                return;
+                console.error("Error while connecting to database: " + err.stack);
+                process.exit(5)
             }
-            console.log("Es geht");
+            console.log("Database connected!");
+            console.log(connection)
         });
     }
 }
