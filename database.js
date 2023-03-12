@@ -31,6 +31,11 @@ module.exports = {
             if (err) throw err;
             return result;
         });
+    },
+    disconnect: async function() {
+        await connection.end();
+        console.log("Database disconnected!")
+        process.end(0)
     }
 }
 
