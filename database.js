@@ -1,3 +1,4 @@
+const { query } = require('express');
 const mysql = require('mysql');
 const config = require('./config.json');
 let connection
@@ -22,6 +23,13 @@ module.exports = {
         connection.query("SELECT count(*) FROM information_schema.TABLES", function (err, result, fields) {
             if (err) throw err;
             console.log(result);
+        });
+        console.log(query("SELECT * FROM information_schema.TABLES"))
+    },
+    query: async function(query) {
+        connection.query(query, function (err, result, fields) {
+            if (err) throw err;
+            return result;
         });
     }
 }
