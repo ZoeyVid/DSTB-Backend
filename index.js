@@ -1,8 +1,8 @@
 console.log("Hello World!");
 
 console.log("Load express module...");
-require("./worker/express.js")();
+require("./express.js")();
 
 console.log("Load database module...");
-const { connect } = require("./worker/database.js");
+const { connect } = require("./database.js");
 connect();
