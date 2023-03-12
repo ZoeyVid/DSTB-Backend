@@ -3,7 +3,7 @@ const config = require('./config.json');
 let connection
 
 module.exports = {
-    connect: function() {
+    connect: async function() {
         console.log("Database module loaded!")
         connection = mysql.createConnection({
             host: config.host,
@@ -12,13 +12,16 @@ module.exports = {
             password: config.password,
             database: config.database
         });
-        connection.connect(function(err) {
+        await connection.connect(function(err) {
             if (err) {
                 console.error("Error while connecting to database: " + err.stack);
                 process.exit(5)
             }
             console.log("Database connected!");
-            console.log(connection)
+        });
+        connection.query("SELECT count(*) FROM information_schema.TABLES", function (err, result, fields) {
+            if (err) throw err;
+            console.log(result);
         });
     }
 }
