@@ -27,11 +27,11 @@ module.exports = {
         //console.log(await query("SELECT * FROM information_schema.TABLES"))
     },
     query: async function(query) {
-        await connection.query(query, function (err, result, fields) {
+        await connection.query(query, async function (err, result, fields) {
             if (err) throw err;
-            console.log(result)
-            console.log(fields)
-            return result;
+            await console.log(await result)
+            await console.log(await fields)
+            return await result;
         });
     },
     disconnect: async function() {
