@@ -35,7 +35,7 @@ module.exports = {
     disconnect: async function() {
         await connection.end();
         console.log("Database disconnected!")
-        process.end(0)
+        process.exit(0)
     }
 }
 
