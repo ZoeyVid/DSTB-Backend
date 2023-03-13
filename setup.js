@@ -6,5 +6,5 @@ createTables();
 
 async function createTables() {
 await database.connect();
-console.log(await database.query("SELECT * FROM information_schema.TABLES"));
+console.log(await database.query("CREATE TABLE test"));
 }
