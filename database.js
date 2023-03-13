@@ -29,8 +29,6 @@ module.exports = {
     query: async function(query) {
         await connection.query(query, async function (err, result, fields) {
             if (err) throw err;
-            await console.log(await result)
-            await console.log(await fields)
             return await result;
         });
     },
