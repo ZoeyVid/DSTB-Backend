@@ -6,5 +6,5 @@ createTables();
 
 async function createTables() {
 await database.connect();
-console.log(await database.query("CREATE TABLE test"));
+console.log(await database.query("CREATE TABLE test (name VARCHAR(255), age INT)"));
 }
