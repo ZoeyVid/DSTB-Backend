@@ -27,6 +27,7 @@ module.exports = {
             if (err) throw err;
             resultVar = result;
         });
+        console.log(resultVar)
         return resultVar;
     },
     disconnect: async function() {
