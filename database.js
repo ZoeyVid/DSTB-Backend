@@ -25,7 +25,7 @@ module.exports = {
         var resultVar;
         await connection.query(query, async function (err, result, fields) {
             if (err) throw err;
-            resultVar = result;
+            resultVar = String(result);
         });
         console.log(resultVar)
         return resultVar;
