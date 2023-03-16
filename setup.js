@@ -8,4 +8,6 @@ async function createTables() {
 await database.connect();
 console.log(await database.query("CREATE TABLE IF NOT EXISTS dstb_user (test VARCHAR(255))"));
 console.log(await database.query("SELECT * FROM information_schema.tables"));
+var test = await database.query("SELECT * FROM information_schema.tables");
+console.log(test[0].table_name);
 }
