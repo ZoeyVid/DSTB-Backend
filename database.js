@@ -26,7 +26,7 @@ module.exports = {
         connection.query(query, (err, result) => {
             if (err) throw err;
             if (err) reject(err);
-            if (!err) resolve(result);
+            if (!err) resolve(Object.values(JSON.parse(JSON.stringify(result))));
         })});
     },
     disconnect: async function() {
