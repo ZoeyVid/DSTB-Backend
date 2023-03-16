@@ -8,6 +8,7 @@ async function createTables() {
 await database.connect();
 console.log(await database.query("CREATE TABLE IF NOT EXISTS dstb_user (test VARCHAR(255))"));
 console.log(await database.query("SELECT * FROM information_schema.tables ORDER BY RAND() LIMIT 1"));
+database.query("INSERT INTO dstb_user (test) VALUES ('test')");
 var test = await database.query("SELECT * FROM dstb_user");
 console.log(test);
 }
