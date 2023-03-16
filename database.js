@@ -22,13 +22,10 @@ module.exports = {
         });
     },
     query: async function(query) {
-        var resultVar;
-        await connection.query(query, async function (err, result, fields) {
+        await connection.query(query, async function (err, rows) {
             if (err) throw err;
-            console.log(result);
-            resultVar = String(result);
+            return callback(rows);
         });
-        return String(resultVar);
     },
     disconnect: async function() {
         await connection.end();
