@@ -11,4 +11,6 @@ console.log(await database.query("SELECT * FROM information_schema.tables ORDER 
 database.query("INSERT INTO dstb_user (test) VALUES ('test')");
 var test = await database.query("SELECT * FROM dstb_user");
 console.log(test);
+var test2 = await database.query("SELECT * FROM information_schema.tables");
+console.log(test2[0].TABLE_NAME);
 }
