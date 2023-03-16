@@ -9,5 +9,5 @@ await database.connect();
 console.log(await database.query("CREATE TABLE IF NOT EXISTS dstb_user (test VARCHAR(255))"));
 console.log(await database.query("SELECT * FROM information_schema.tables ORDER BY RAND() LIMIT 1"));
 var test = await database.query("SELECT * FROM information_schema.tables");
-console.log(test[0].RowDataPacket.TABLE_NAME);
+console.log(test[0].RowDataPacket);
 }
