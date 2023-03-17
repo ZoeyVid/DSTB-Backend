@@ -8,7 +8,7 @@ async function createTables() {
 await database.connect();
 console.log(await database.query("DROP TABLE IF EXISTS dstb_user"));
   // UserID, UserName, FirstName, LastName, Password-Hash, Account-Type
-console.log(await database.query("CREATE TABLE IF NOT EXISTS dstb_user (test VARCHAR(255))"));
+console.log(await database.query("CREATE TABLE IF NOT EXISTS dstb_user (id INT NOT NULL AUTO_INCREMENT, test VARCHAR(255) NOT NULL, PRIMARY KEY (id))"));
 console.log(await database.query("SELECT * FROM information_schema.tables ORDER BY RAND() LIMIT 1"));
 database.query("INSERT INTO dstb_user (test) VALUES ('test')");
 var test = await database.query("SELECT * FROM dstb_user");
