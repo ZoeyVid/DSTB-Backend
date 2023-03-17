@@ -1,10 +1,10 @@
 const { query } = require('express');
 const mysql = require('mysql');
-//const config = require('./../config.json');
+let connection
 
 
-module.exports = (config) {
-    connect: async function() {
+module.exports = {
+    connect: async function(config) {
         console.log("Database module loaded!")
         connection = mysql.createConnection({
             host: config.db.host,
