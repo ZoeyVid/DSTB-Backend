@@ -7,11 +7,11 @@ module.exports = {
     connect: async function() {
         console.log("Database module loaded!")
         connection = mysql.createConnection({
-            host: config.host,
-            port: config.port,
-            user: config.user,
-            password: config.password,
-            database: config.database
+            host: config.db.host,
+            port: config.db.port,
+            user: config.db.user,
+            password: config.db.password,
+            database: config.db.database
         });
         await connection.connect(function(err) {
             if (err) {
