@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const { userCreate } = require('./worker/user')
+const { userCreate, user } = require('./worker/user')
 
 module.exports = async function() {
     console.log("Express module loaded!")
@@ -13,6 +13,7 @@ module.exports = async function() {
         // Returns data of a user, Requires user id, must the user self, the parents, a teacher or an admin
         let username = req.body.username;
         let password = req.body.password;
+        user(username, password)
         res.send('Got a GET request at /user')
     })
     app.post('/user/create', async function(req, res) {
