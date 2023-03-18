@@ -13,6 +13,7 @@ module.exports = async function() {
         // Returns data of a user, Requires user id, must the user self, the parents, a teacher or an admin
         let username = req.body.username;
         let password = req.body.password;
+        console.log(username, password)
         res.send(await user(username, password))
     })
     app.post('/user/create', async function(req, res) {
