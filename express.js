@@ -9,12 +9,11 @@ module.exports = async function() {
     app.get('/', function(req, res) {
         res.send('Hello World!')
     })
-    app.get('/user', function(req, res) {
+    app.get('/user', async function(req, res) {
         // Returns data of a user, Requires user id, must the user self, the parents, a teacher or an admin
         let username = req.body.username;
         let password = req.body.password;
-        user(username, password)
-        res.send('Got a GET request at /user')
+        res.send(await user(username, password))
     })
     app.post('/user/create', async function(req, res) {
         // Creates a new user, Requires Name and co, must be an admin
