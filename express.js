@@ -1,18 +1,16 @@
 const express = require('express')
-const bodyParser = require('body-parser')
 const { userCreate, user } = require('./worker/user')
 
 module.exports = async function() {
     console.log("Express module loaded!")
     const app = express()
-    app.use(bodyParser.urlencoded({ extended: false }));
     app.get('/', function(req, res) {
         res.send('Hello World!')
     })
     app.get('/user', async function(req, res) {
         // Returns data of a user, Requires user id, must the user self, the parents, a teacher or an admin
-        let username = req.body.username;
-        let password = req.body.password;
+        let username = req.query.username;
+        let password = req.query.password;
         console.log(username, password)
         res.send(await user(username, password))
     })
