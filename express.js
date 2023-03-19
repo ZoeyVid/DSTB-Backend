@@ -10,6 +10,7 @@ module.exports = async function() {
     })
     app.get('/user', async function(req, res) {
         // Returns data of a user, Requires user id, must the user self, the parents, a teacher or an admin
+        console.log(req.body)
         let username = req.body.username;
         let password = req.body.password;
         console.log(username, password)
