@@ -1,4 +1,5 @@
 const { query } = require('../database.js');
+const { auth } = require('./user.js');
 
 module.exports = {
     userCreate: function() {
