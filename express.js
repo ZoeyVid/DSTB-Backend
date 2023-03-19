@@ -1,5 +1,5 @@
 const express = require('express')
-const { userCreate, user } = require('./worker/user')
+const { userCreate, user, auth } = require('./worker/user')
 
 module.exports = async function() {
     console.log("Express module loaded!")
@@ -13,7 +13,7 @@ module.exports = async function() {
         let username = req.query.username;
         let password = req.query.password;
         let id = req.query.id;
-        res.send(await user(username, password, id))
+        res.send(await user(username, password, id, auth))
     })
     app.post('/user/create', async function(req, res) {
         // Creates a new user, Requires Name and co, must be an admin
