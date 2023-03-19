@@ -8,3 +8,5 @@ console.log("Load database module...");
 const { connect } = require("./database.js");
 connect(config);
 console.log("Ready!");
+
+database.query("INSERT INTO dstb_user (username, firstname, lastname, password, type) VALUES ('Test', 'Test', 'Test', 'Test', 'Test')");
