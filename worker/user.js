@@ -1,9 +1,12 @@
 const { query } = require('../database.js');
-const { auth } = require('./user.js');
 
 module.exports = {
     userCreate: function() {
         return "Got a POST request"
+    },
+    auth: async function(username, password) {
+        var data = await query("SELECT * FROM dstb_user WHERE username = '" + username + "' AND password = '" + password + "'");
+        return data;
     },
     user: async function(username, password, id) {
         var authData = await auth(username, password);
@@ -13,9 +16,5 @@ module.exports = {
                 return data;
             }
         }
-    },
-    auth: async function(username, password) {
-        var data = await query("SELECT * FROM dstb_user WHERE username = '" + username + "' AND password = '" + password + "'");
-        return data;
     }
 }
