@@ -5,7 +5,7 @@ module.exports = {
         return "Got a POST request"
     },
     user: async function(username, password, id) {
-        var authData = await this.auth(username, password);
+        var authData = await auth(username, password);
         if (authData.length > 0) {
             if(authData[0].id == id || authData[0].type == "Admin" || authData[0].role == "teacher") {
                 var data = await query("SELECT * FROM dstb_user WHERE id = '" + id + "'");
