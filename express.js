@@ -12,8 +12,8 @@ module.exports = async function() {
         // Returns data of a user, Requires user id, must the user self, the parents, a teacher or an admin
         let username = req.query.username;
         let password = req.query.password;
-        console.log(username, password)
-        res.send(await user(username, password))
+        let id = req.query.id;
+        res.send(await user(username, password, id))
     })
     app.post('/user/create', async function(req, res) {
         // Creates a new user, Requires Name and co, must be an admin
